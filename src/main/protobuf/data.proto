@@ -1,0 +1,21 @@
+syntax = "proto2";
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  package_name: "test.protos";
+};
+
+// A 128-bit id, transferred as two 64-bit longs
+message UUID {
+  required sint64 least_significant_bits = 1;
+  required sint64 most_significant_bits  = 2;
+}
+
+// Seconds from the epoch of 1970-01-01T00:00:00Z
+message UnixTime {
+  required int64 from_epoch = 1;
+}
+
+message Duration {
+  required int32 seconds = 1;
+}

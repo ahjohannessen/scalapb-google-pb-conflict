@@ -11,6 +11,7 @@ object serialization {
 
       PB.runProtoc in PB.protobufConfig := (args ⇒ runProtoc("-v300" +: args.toArray)),
     PB.flatPackage in PB.protobufConfig := true,
+    			 version in PB.protobufConfig := "3.0.0",
 
     unmanagedResourceDirectories in Compile +=
       baseDirectory.value / "src/main/protobuf",
